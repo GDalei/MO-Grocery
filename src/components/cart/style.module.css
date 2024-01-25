@@ -1,0 +1,15 @@
+.cartButtonWaper{
+    display: flex;
+    gap: 15px;
+    background-color: green;
+    align-items: center;
+    font-weight: bold;
+}
+.cartPrice{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}

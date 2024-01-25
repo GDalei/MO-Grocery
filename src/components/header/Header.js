@@ -1,40 +1,96 @@
-'use client'
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import style from './style.module.css';
-// import CartIcon from '../CartIcon';
-// import LoginComponent from '../LoginComponent/LoginComponent';
-export default function Header() {
-    return (
-        <Box sx={{ flexGrow: 1 }} >
-            <AppBar position="static" className={style.bgColor}>
-                <Toolbar className={style.navHeight}>
-                    <IconButton
-                        size="small"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
+import React from "react";
+import {
+  Navbar,
+  Collapse,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Cart from '../cart/Cart';
+import Login from '../login/Login'
+function NavList() {
+  return (
+    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-medium"
+      >
+        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+          Pages
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-medium"
+      >
+      <Login/>
+      </Typography>
 
-                        sx={{ mr: 2, height: "20px" }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} className={style.companyName}>
-                        OrissaFertilizer
-                    </Typography>
-                    {/* <LoginComponent></LoginComponent> */}
-                    {/*               
-                        <CartIcon name="Cart" count="5"/>
-                    
-                    <Button color="inherit"><a href="http://localhost/fertilizer/register.php" target='blank'>register</a></Button> */}
-                </Toolbar>
-            </AppBar>
-        </Box>
-    );
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-medium"
+      >
+
+        <Cart color="white" />
+
+      </Typography>
+    </ul>
+  );
 }
+
+const Header = () => {
+  const [openNav, setOpenNav] = React.useState(false);
+
+  const handleWindowResize = () =>
+    window.innerWidth >= 960 && setOpenNav(false);
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  return (
+    <div className="Header-waper">
+      <Navbar className="w-screen">
+        <div className="flex items-center justify-between text-blue-gray-900">
+          <Typography
+            as="a"
+            href="#"
+            variant="h6"
+            className="mr-4 cursor-pointer py-1.5"
+          >
+            MO Grocery
+          </Typography>
+          <div className="hidden lg:block">
+            <NavList />
+          </div>
+          <IconButton
+            variant="text"
+            className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+            ripple={false}
+            onClick={() => setOpenNav(!openNav)}
+          >
+            {openNav ? (
+              <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+            ) : (
+              <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+            )}
+          </IconButton>
+        </div>
+        <Collapse open={openNav}>
+          <NavList />
+        </Collapse>
+      </Navbar>
+    </div>
+  );
+}
+export default Header

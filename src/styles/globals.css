@@ -6,7 +6,11 @@
   padding: 0px;
   margin: 0px;
 }
-
+.Header-waper>.max-w-screen-2xl{
+  max-width:none !important;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,10 +23,15 @@
 body {
   margin: 0px;
   padding: 0px;
+  
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+.p-6 {
+  padding: .8rem;
+  padding-top: 0px;
 }

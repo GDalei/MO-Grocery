@@ -1,34 +1,41 @@
+
 import React from "react";
+import style from './style.module.css';
 import {
   Navbar,
   Collapse,
   Typography,
   IconButton,
 } from "@material-tailwind/react";
+import Link from 'next/link'
+import DrawerPlacement from '../DrawerPlacement/DrawerPlacement'
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Cart from '../cart/Cart';
-import Login from '../login/Login'
+import Login from '../login/Login';
+import Container from '@mui/material/Container';
+import CameraEnhanceOutlinedIcon from '@mui/icons-material/CameraEnhanceOutlined';
+import DialogDefault from "../DialogDefault/DialogDefault";
 function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      <IconButton
+        as="li"
+        variant="text"
+        color="blue-gray"
+        className="p-1 font-medium"
+      >
+
+        <DialogDefault />
+
+      </IconButton>
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Pages
-        </a>
+        <Login />
       </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
-      >
-      <Login/>
-      </Typography>
 
       <Typography
         as="li"
@@ -37,18 +44,18 @@ function NavList() {
         className="p-1 font-medium"
       >
 
-        <Cart color="white" />
-
+        {/* <Cart color="white" /> */}
+        <DrawerPlacement />
       </Typography>
     </ul>
   );
 }
 
 const Header = () => {
-  const [openNav, setOpenNav] = React.useState(false);
+  const [openNav, setOpenNav] = React.useState(true);
 
   const handleWindowResize = () =>
-    window.innerWidth >= 960 && setOpenNav(false);
+   // window.innerWidth >= 100 && setOpenNav(false);
 
   React.useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
@@ -59,38 +66,22 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="Header-waper">
-      <Navbar className="w-screen">
-        <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography
-            as="a"
-            href="#"
-            variant="h6"
-            className="mr-4 cursor-pointer py-1.5"
-          >
-            MO Grocery
-          </Typography>
-          <div className="hidden lg:block">
-            <NavList />
-          </div>
-          <IconButton
-            variant="text"
-            className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-            ripple={false}
-            onClick={() => setOpenNav(!openNav)}
-          >
-            {openNav ? (
-              <XMarkIcon className="h-6 w-6" strokeWidth={2} />
-            ) : (
-              <Bars3Icon className="h-6 w-6" strokeWidth={2} />
-            )}
-          </IconButton>
-        </div>
-        <Collapse open={openNav}>
-          <NavList />
-        </Collapse>
-      </Navbar>
-    </div>
+    <Container maxWidth={true} className={style.header_warper}>
+      <Link href="/">
+        <Typography
+
+          variant="h6"
+          className="mr-4 cursor-pointer py-1.5"
+        >
+          MO Grocery
+        </Typography>
+      </Link>
+      <div className=" lg:block">
+        <NavList />
+      </div>
+
+
+    </Container>
   );
 }
 export default Header

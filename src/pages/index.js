@@ -4,16 +4,17 @@ import Header from '../components/header/Header';
 import FooterWithSitemap from '../components/FooterWithSitemap/FooterWithSitemap';
 import CarouselCustomNavigation from '../components/Carousel/Carousel'
 import Containers from '../components/container/Containers';
+import CheckoutForm from '../components/CheckoutForm/CheckoutForm';
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Header></Header>
-      <CarouselCustomNavigation/>
+      <CarouselCustomNavigation />
       <Containers />
       <FooterWithSitemap />
 
-    </>
+    </div>
   );
 }

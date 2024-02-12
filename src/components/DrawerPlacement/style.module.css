@@ -1,0 +1,105 @@
+.waper {
+    max-width: 350px !important;
+    /* background-color: #f5f7fd; */
+    overflow: scroll;
+    height: -webkit-fill-available !important;
+}
+
+.widgets__Container {
+    box-sizing: border-box;
+    background-color: transparent;
+    height: auto;
+}
+
+.widgets_Card_Container {
+    display: grid;
+    column-gap: 5px;
+    row-gap: 10px;
+    grid-template-columns: 1fr 50px;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.bill_details_warper {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.button_warper {}
+
+.button_process {
+    display: flex;
+    cursor: pointer;
+    padding: 10px 12px;
+    background-color: rgb(12, 131, 31);
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button_process:hover {
+    display: flex;
+    cursor: pointer;
+    padding: 10px 12px;
+    background-color: rgb(8, 87, 21);
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.CheckoutStrip__PriceContainer {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.CheckoutStrip__NetPriceText {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-family: Okra;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.CheckoutStrip__TotalText {
+    margin-top: 2px;
+    font-family: Okra;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 15px;
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+}
+
+.CheckoutStrip__CTAText {
+    font-size: 16px;
+
+    font-weight: 400;
+    color: white;
+}
+
+.Address_widgets__Container {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.address_chose {
+    color: #096009;
+    background-color: #d0e1d0;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.selectAddress{
+    width: 100%;
+    padding: 5px;
+    word-break: break-all;
+}

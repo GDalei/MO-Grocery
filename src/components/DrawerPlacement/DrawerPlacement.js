@@ -31,10 +31,6 @@ const DrawerPlacement = () => {
         return state.userInfo.currentAddress;
     })
 
-    // const UserState = useSelector((state) => {
-    //     console.log("state>>>>>", state)
-    // })
-
     const checkOutButtonClickHandler = () => {
         setisAddress((prev) => {
             return !prev

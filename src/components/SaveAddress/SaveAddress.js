@@ -35,10 +35,8 @@ const SaveAddress = () => {
     }
     const saveAddressHandler = () => {
 
-        const fullAddress = {
-            addressOne: addressOne, addresstwo: addresstwo, addressThree: addressThree, addressFour: addressFour, addressFive: addressFive,
-            addressNumber: addressNumber,
-        }
+        const fullAddress = `${addressOne},${addresstwo},${addressThree},${addressFour},${addressFive},${addressNumber},`
+
         dispatch({ type: "CURRENT_ADDRESS", payload: fullAddress })
     }
     return (

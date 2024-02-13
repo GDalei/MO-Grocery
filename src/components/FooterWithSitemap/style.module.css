@@ -1,3 +1,11 @@
-.footerHeaderName{
-    
+.footerWaper{
+    background-color: rgb(34, 34, 34);
+    padding: 10px;
+}
+.footerContaint{
+    display: flex;
+    justify-content: space-evenly;
+}
+.footerRight{
+    justify-content: space-around;
 }

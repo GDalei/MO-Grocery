@@ -40,11 +40,12 @@ const ProductPage = () => {
                                 width: '300%',
                                 height: '150%'
                             },
+                            
 
                         }} />
 
                     </div>
-                    <div className={style.productDetailsView}>
+                    <div className={`${style.productDetailsView} sm:100%`}>
                         <div className={style.ProductInfoCard__ProductInfoWrapper}>
                             <div className={style.ProductInfoCard__ZoomedImageContainer}></div>
                             <div className={style.ProductInfoCard__Breadcrumb}>

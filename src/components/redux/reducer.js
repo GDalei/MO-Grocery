@@ -11,8 +11,8 @@ const loginState = {
 const userInfoState = {
     name: "",
     pin: "",
-    addressList: [{ name: "Name", pin: 325 }],
-    currentAddress: {},
+    addressList: ["asa,sas,as"],
+    currentAddress: "",
     role: "",
 }
 const addCartReducer = (state = initState, action) => {

@@ -17,12 +17,12 @@ import CameraEnhanceOutlinedIcon from '@mui/icons-material/CameraEnhanceOutlined
 import DialogDefault from "../DialogDefault/DialogDefault";
 function NavList() {
   return (
-    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="items-center my-2 flex gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 md:items-center sm:items-center">
       <IconButton
         as="li"
         variant="text"
         color="blue-gray"
-        className="p-1 font-medium"
+        className={`p-1 font-medium ${style.cartCheckOutCamera}`}
       >
 
         <DialogDefault />
@@ -32,7 +32,7 @@ function NavList() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium"
+        className={`p-1 font-medium ${style.cartCheckOutLogin}`}
       >
         <Login />
       </Typography>
@@ -41,7 +41,7 @@ function NavList() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium"
+        className={`p-1 font-medium ${style.cartCheckOutBacket}`}
       >
 
         {/* <Cart color="white" /> */}
@@ -55,15 +55,15 @@ const Header = () => {
   const [openNav, setOpenNav] = React.useState(true);
 
   const handleWindowResize = () =>
-   // window.innerWidth >= 100 && setOpenNav(false);
+    // window.innerWidth >= 100 && setOpenNav(false);
 
-  React.useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
+    React.useEffect(() => {
+      window.addEventListener("resize", handleWindowResize);
 
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
+      return () => {
+        window.removeEventListener("resize", handleWindowResize);
+      };
+    }, []);
 
   return (
     <Container maxWidth={true} className={style.header_warper}>
@@ -76,7 +76,7 @@ const Header = () => {
           MO Grocery
         </Typography>
       </Link>
-      <div className=" lg:block">
+      <div className="sm:block md:block lg:block">
         <NavList />
       </div>
 

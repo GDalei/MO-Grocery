@@ -54,7 +54,7 @@ const Registor = () => {
         }
     }
     return (
-        <Card className="mx-auto w-full ">
+        <Card className="mx-auto">
             <div className={style.cardContainer}>
                 <div className={style.cardData}>
                     <CardBody className="flex flex-col gap-4">

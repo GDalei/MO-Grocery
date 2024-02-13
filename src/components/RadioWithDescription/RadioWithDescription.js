@@ -7,7 +7,7 @@ import FormLabel from '@mui/material/FormLabel';
 import { Button } from "@material-tailwind/react";
 import style from './style.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-const RadioWithDescription = () => {
+const RadioWithDescription = ({ closePopup }) => {
     const [value, setValue] = React.useState('female');
     const [disable, setDisable] = React.useState(true);
 
@@ -23,7 +23,11 @@ const RadioWithDescription = () => {
     })
 
     const selectAddressHandler = (event) => {
-        dispatch({ type: "SELECTED_ADDRESS", payload: value })
+        dispatch({ type: "SELECTED_ADDRESS", payload: value });
+        if (closePopup != undefined) {
+            closePopup()
+        }
+
     }
 
     return (
@@ -38,8 +42,8 @@ const RadioWithDescription = () => {
                 >
                     {
                         addressList.map((value, index) => {
-                            return <><FormControlLabel value={JSON.stringify({ ...value })} control={<Radio />} label={"Address"} />
-                                <div className={style.fullAddress}>{JSON.stringify({ ...value })}</div>
+                            return <><FormControlLabel value={value} control={<Radio />} label={"Address"} />
+                                <div className={style.fullAddress}>{value}</div>
                             </>
                         })
                     }

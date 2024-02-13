@@ -12,7 +12,7 @@ import RadioWithDescription from '../RadioWithDescription/RadioWithDescription';
 import DialogDefault from '../DialogDefault/DialogDefault';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useSelector, useDispatch } from 'react-redux';
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 const DrawerPlacement = () => {
 
@@ -39,6 +39,9 @@ const DrawerPlacement = () => {
         setisAddress((prev) => {
             return !prev
         })
+    };
+    const checkOutOrderButtonClickHandler = () => {
+
     }
     const backDrawerRight = () => {
         setisAddress((prev) => {
@@ -77,7 +80,8 @@ const DrawerPlacement = () => {
                         </div>
                         <DialogDefault type="address" />
                         <div className={style.address_chose}>Choose Delivery Address</div>
-                        <RadioWithDescription />
+
+                        <RadioWithDescription closePopup={backDrawerRight} />
 
                     </> : <>
                         <div className="mb-6 flex items-center justify-between">
@@ -125,14 +129,27 @@ const DrawerPlacement = () => {
                         </div>
 
                         <div className={style.button_warper}>
-                            {/* <div className={style.selectAddress}>{selectedAddress}</div> */}
-                            <div className={style.button_process} onClick={checkOutButtonClickHandler}>
-                                <div className={style.CheckoutStrip__PriceContainer}>
-                                    <div className={style.CheckoutStrip__NetPriceText}>₹{state.price}</div>
-                                    <div className={style.CheckoutStrip__TotalText}>TOTAL</div>
-                                </div>
-                                <div className={style.CheckoutStrip__CTAText}>Proceed</div>
-                            </div>
+                            <div className={style.selectAddress}>{selectedAddress}</div>
+                            {
+
+                                String(selectedAddress).length <= "0" ?
+                                    <div className={style.button_process} onClick={checkOutButtonClickHandler}>
+                                        <div className={style.CheckoutStrip__PriceContainer}>
+                                            <div className={style.CheckoutStrip__NetPriceText}>₹{state.price}</div>
+                                            <div className={style.CheckoutStrip__TotalText}>TOTAL</div>
+                                        </div>
+
+                                        <div className={style.CheckoutStrip__CTAText}>Proceed</div>
+                                    </div> : <div className={style.button_process} onClick={checkOutOrderButtonClickHandler}>
+                                        <div className={style.CheckoutStrip__PriceContainer}>
+                                            <div className={style.CheckoutStrip__NetPriceText}>₹{state.price}</div>
+                                            <div className={style.CheckoutStrip__TotalText}>TOTAL</div>
+                                        </div>
+
+                                        <div className={style.CheckoutStrip__CTAText}>Submite</div>
+                                    </div>
+                            }
+
 
                         </div>
                     </>

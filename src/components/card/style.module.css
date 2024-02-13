@@ -1,21 +1,6 @@
-.footerWapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 15px;
-    font-family: system-ui;
+.cardWapper{
+    width: 180px !important;
 }
-
-.pieces {
-    font-size: 12px;
-    color: gray;
-    height: 13px;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    font-family: system-ui;
-}
-
 .productTitle {
     font-size: 12px;
     font-weight: bold;
@@ -69,4 +54,23 @@
 .cardImg{
     display: flex;
     justify-content: center;
+}
+
+
+.CardfooterWapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    font-family: system-ui;
+    flex-wrap: wrap;
+}
+.CardfooterPieces {
+    font-size: 12px;
+    color: gray;
+    height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-family: system-ui;
 }

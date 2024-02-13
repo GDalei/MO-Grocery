@@ -19,10 +19,10 @@ const SimpleCard = ({ url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=sc
   const router = useRouter()
   const imgClickHandler = (event) => {
     const Img = event.target.getAttribute("src")
-    router.push({ pathname: "/ProductPage", query: { img: Img} })
+    router.push({ pathname: "/ProductPage", query: { img: Img } })
   }
   return (
-    <Card className="mt-3 w-48">
+    <Card className={`mt-3 w-48 ${style.cardWapper}`}>
       <CardBody className={style.cardBody}>
         <div width="120" height="120" className={style.cardImg} onClick={imgClickHandler}>
           <img src={url} />
@@ -33,8 +33,8 @@ const SimpleCard = ({ url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=sc
         </div>
       </CardBody>
       <CardFooter className={`pt-0`}>
-        <span className={style.pieces}>10 pieces</span>
-        <div className={style.footerWapper}>
+        <span className={style.CardfooterPieces}>10 pieces</span>
+        <div className={style.CardfooterWapper}>
           <div>
             <div style={{ color: "black", fontWeight: 600, fontSize: 12 }}>₹134</div>
             <div style={{ color: "gray", fontWeight: 600, fontSize: 12 }}>₹155</div>

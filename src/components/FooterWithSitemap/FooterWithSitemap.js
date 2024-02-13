@@ -25,13 +25,12 @@ const currentYear = new Date().getFullYear();
 const FooterWithSitemap = () => {
   return (
     <>
-      <footer className="relative w-full">
-        <div className="mx-auto w-full max-w-7xl px-8">
+      <footer className={`relative ${style.footerWaper}`}>
+        <div className={`mx-auto w-full max-w-7xl px-8 ${style.footerContaint}`}>
 
-          <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
-
+         
             {SITEMAP.map(({ title, links }, key) => (
-              <div key={key} className="w-full">
+              <div key={key} >
                 <Typography
                   variant="small"
                   color="blue-gray"
@@ -54,7 +53,7 @@ const FooterWithSitemap = () => {
               </div>
             ))}
           </div>
-          <div className="flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
+          <div className={`flex w-full flex-col items-center  py-4 md:flex-row md:justify-between ${style.footerRight}`}>
             <Typography
               variant="small"
               className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
@@ -106,7 +105,7 @@ const FooterWithSitemap = () => {
               </Typography>
             </div>
           </div>
-        </div>
+        
       </footer>
     </>
   );

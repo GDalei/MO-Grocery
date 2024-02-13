@@ -19,8 +19,6 @@ const Containers = () => {
                 <SimpleCard />
                 <SimpleCard />
                 <SimpleCard />
-
-
             </div>
         </>
     )

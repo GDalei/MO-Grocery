@@ -13,6 +13,7 @@ import { useSearchParams } from 'next/navigation'
 const ProductPage = () => {
     const searchParams = useSearchParams()
     const IMG_UR = searchParams.get('img');
+    const Price = searchParams.get('price');
    //const Big_Img = IMG_UR.replace("w=270","w=1200")
     //console.log(">>", IMG_UR.replace("w=270","w=1200"))
 
@@ -67,7 +68,7 @@ const ProductPage = () => {
                                     <div className={style.ProductVariants__PriceContainer}><span className={style.ProductVariants__OutOfStockText}>Out Of Stock</span></div>
                                     <div className={style.ProductVariants__TaxText} >(Inclusive of all taxes)</div>
                                 </div>
-                                <AddButton />
+                                <AddButton price={335}/>
                             </div>
                         </div>
                         <div className={style.GrofersPromises__PDPPromiseContainer}>

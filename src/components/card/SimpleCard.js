@@ -19,7 +19,7 @@ const SimpleCard = ({ url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=sc
   const router = useRouter()
   const imgClickHandler = (event) => {
     const Img = event.target.getAttribute("src")
-    router.push({ pathname: "/ProductPage", query: { img: Img } })
+    router.push({ pathname: "/ProductPage", query: { img: Img, price: 335} })
   }
   return (
     <Card className={`mt-3 w-48 ${style.cardWapper}`}>

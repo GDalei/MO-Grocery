@@ -11,7 +11,7 @@ const loginState = {
 const userInfoState = {
     name: "",
     pin: "",
-    addressList: ["asa,sas,as"],
+    addressList: [],
     currentAddress: "",
     role: "",
 }

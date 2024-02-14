@@ -1,6 +1,7 @@
-.cardWapper{
+.cardWapper {
     width: 180px !important;
 }
+
 .productTitle {
     font-size: 12px;
     font-weight: bold;
@@ -51,7 +52,8 @@
 .buttonStyle {
     width: 100px;
 }
-.cardImg{
+
+.cardImg {
     display: flex;
     justify-content: center;
 }
@@ -65,6 +67,7 @@
     font-family: system-ui;
     flex-wrap: wrap;
 }
+
 .CardfooterPieces {
     font-size: 12px;
     color: gray;
@@ -73,4 +76,12 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     font-family: system-ui;
+}
+
+@media only screen and (max-device-width : 360px) {
+
+    /* Styles */
+    .cardWapper {
+        width: 170px !important;
+    }
 }

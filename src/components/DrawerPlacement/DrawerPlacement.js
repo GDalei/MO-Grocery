@@ -13,7 +13,6 @@ import DialogDefault from '../DialogDefault/DialogDefault';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useSelector, useDispatch } from 'react-redux';
 import CircularProgress from '@mui/material/CircularProgress';
-
 const DrawerPlacement = () => {
 
     const [openRight, setOpenRight] = React.useState(false);
@@ -123,7 +122,7 @@ const DrawerPlacement = () => {
                             </div>
 
                         </div>
-
+                        
                         <div className={style.button_warper}>
                             <div className={style.selectAddress}>{selectedAddress}</div>
                             {

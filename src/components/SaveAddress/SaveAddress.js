@@ -2,7 +2,7 @@ import react, { useState } from 'react';
 import { Input } from "@material-tailwind/react";
 import { Button } from "@material-tailwind/react";
 import { useSelector, useDispatch } from 'react-redux';
-const SaveAddress = () => {
+const SaveAddress = ({ closePopup }) => {
     const [addressOne, setAddressOne] = useState("");
     const [addresstwo, setAddresstwo] = useState("");
     const [addressThree, setAddressThree] = useState("");
@@ -38,6 +38,10 @@ const SaveAddress = () => {
         const fullAddress = `${addressOne},${addresstwo},${addressThree},${addressFour},${addressFive},${addressNumber},`
 
         dispatch({ type: "CURRENT_ADDRESS", payload: fullAddress })
+     
+        if (closePopup != undefined) {
+            closePopup()
+        }
     }
     return (
         <div>

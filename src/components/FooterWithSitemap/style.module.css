@@ -1,6 +1,9 @@
 .footerWaper{
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(255 255 255);
     padding: 10px;
+    margin-top: 110px;
+
+
 }
 .footerContaint{
     display: flex;

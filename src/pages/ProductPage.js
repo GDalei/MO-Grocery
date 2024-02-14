@@ -14,7 +14,8 @@ const ProductPage = () => {
     const searchParams = useSearchParams()
     const IMG_UR = searchParams.get('img');
     const Price = searchParams.get('price');
-   //const Big_Img = IMG_UR.replace("w=270","w=1200")
+    const Name = searchParams.get('Name');
+    //const Big_Img = IMG_UR.replace("w=270","w=1200")
     //console.log(">>", IMG_UR.replace("w=270","w=1200"))
 
     return (
@@ -41,7 +42,7 @@ const ProductPage = () => {
                                 width: '300%',
                                 height: '150%'
                             },
-                            
+
 
                         }} />
 
@@ -53,7 +54,7 @@ const ProductPage = () => {
                                 Home / Bread & Pav / Harvest Gold 100% Atta Whole Wheat Bread
                             </div>
                             <div className={style.ProductInfoCard__ProductName}>
-                                <h1>Harvest Gold 100% Atta Whole Wheat Bread
+                                <h1>{Name}
                                 </h1>
                             </div>
                             <div className={style.ProductInfoCard__EtaTagContainer}></div>
@@ -68,7 +69,7 @@ const ProductPage = () => {
                                     <div className={style.ProductVariants__PriceContainer}><span className={style.ProductVariants__OutOfStockText}>Out Of Stock</span></div>
                                     <div className={style.ProductVariants__TaxText} >(Inclusive of all taxes)</div>
                                 </div>
-                                <AddButton price={335}/>
+                                <AddButton price={335} />
                             </div>
                         </div>
                         <div className={style.GrofersPromises__PDPPromiseContainer}>

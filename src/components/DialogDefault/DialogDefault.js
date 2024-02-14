@@ -25,6 +25,7 @@ const DialogDefault = ({ type = "" }) => {
                     </div>
                     <Dialog open={open} handler={handleOpen}>
                         <DialogHeader className={style.Address_widgets__Container}>Enter complete address</DialogHeader>
+                        
                         <DialogBody className={style.Address_widgets__Container}>
                             <SaveAddress closePopup={handleOpen}></SaveAddress>
                         </DialogBody>

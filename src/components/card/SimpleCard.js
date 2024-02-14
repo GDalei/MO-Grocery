@@ -9,7 +9,7 @@ import Link from 'next/link'
 import style from './style.module.css';
 import AddButton from "../addButton/AddButton";
 import { useRouter } from 'next/router';
-const SimpleCard = ({ url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/530158a.jpg" }) => {
+const SimpleCard = ({ url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/530158a.jpg", name = "English Oven Brown Bread", quantity = "400 gr", marketPrice = "60", ourPrice = "50" }) => {
   const mystyle = {
     color: "white",
     backgroundColor: "DodgerBlue",
@@ -19,7 +19,7 @@ const SimpleCard = ({ url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=sc
   const router = useRouter()
   const imgClickHandler = (event) => {
     const Img = event.target.getAttribute("src")
-    router.push({ pathname: "/ProductPage", query: { img: Img, price: 335} })
+    router.push({ pathname: "/ProductPage", query: { img: Img, price: ourPrice, Name: name } })
   }
   return (
     <Card className={`mt-3 w-48 ${style.cardWapper}`}>
@@ -29,15 +29,15 @@ const SimpleCard = ({ url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=sc
         </div>
         <div className={style.deliveryTime}>10 mins</div>
         <div className={style.productTitle}>
-          <span>Eggoz Farm Fresh White Eggs (10 pieces)</span>
+          <span>{name}</span>
         </div>
       </CardBody>
       <CardFooter className={`pt-0`}>
-        <span className={style.CardfooterPieces}>10 pieces</span>
+        <span className={style.CardfooterPieces}>{quantity}</span>
         <div className={style.CardfooterWapper}>
           <div>
-            <div style={{ color: "black", fontWeight: 600, fontSize: 12 }}>₹134</div>
-            <div style={{ color: "gray", fontWeight: 600, fontSize: 12 }}>₹155</div>
+            <div style={{ color: "black", fontWeight: 600, fontSize: 12 }}>₹{marketPrice}</div>
+            <div style={{ color: "gray", fontWeight: 600, fontSize: 12 }}>₹{ourPrice}</div>
           </div>
           <AddButton price={134} />
 

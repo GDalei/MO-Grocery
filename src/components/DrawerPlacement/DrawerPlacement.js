@@ -105,6 +105,7 @@ const DrawerPlacement = () => {
                             </IconButton>
                         </div>
                         <div className={style.widgets__Container}>
+      
                             <div className={style.widgets_Card_Container}>
                                 <div className={style.bill_details_warper}>Bill details</div>
                                 <div></div>
@@ -122,7 +123,7 @@ const DrawerPlacement = () => {
                             </div>
 
                         </div>
-                        
+
                         <div className={style.button_warper}>
                             <div className={style.selectAddress}>{selectedAddress}</div>
                             {

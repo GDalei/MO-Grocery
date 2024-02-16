@@ -1,5 +1,6 @@
 'use client'
 import { Carousel } from "@material-tailwind/react";
+import Card from '../card/SimpleCard';
 const url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg"
 const CarouselCustomNavigation = () => {
     return (

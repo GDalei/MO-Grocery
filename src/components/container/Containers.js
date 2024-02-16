@@ -28,7 +28,7 @@ const Containers = () => {
 
 
             <Container>
-                <Carousel responsive={responsive}   removeArrowOnDeviceType={["tablet", "mobile"]} itemClass="carousel-item-padding-40-px"
+                <Carousel responsive={responsive}   removeArrowOnDeviceType={["tablet", "mobile"]} 
                 >
                     <SimpleCard name="English Oven Brown Bread" quantity="400 gr" marketPrice="60" ourPrice="50"
                         url="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/full_screen/pro_18396.jpg?ts=1697722165" />
@@ -49,7 +49,7 @@ const Containers = () => {
                     <SimpleCard />
 
                 </Carousel>;
-                <Carousel responsive={responsive}>
+                <Carousel responsive={responsive}   removeArrowOnDeviceType={["tablet", "mobile"]}>
                     <SimpleCard name="English Oven Brown Bread" quantity="400 gr" marketPrice="60" ourPrice="50"
                         url="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/full_screen/pro_18396.jpg?ts=1697722165" />
                     <SimpleCard name="Amul Fresh Malai Paneer" quantity="200 gr" marketPrice="91" ourPrice="91"

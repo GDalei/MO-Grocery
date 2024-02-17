@@ -37,3 +37,23 @@ body {
   padding: .8rem;
   padding-top: 0px;
 }
+
+.react-multiple-carousel__arrow {
+  position: absolute;
+  outline: 0;
+  transition: all .5s;
+  border-radius: 35px;
+  z-index: 1000;
+  border: 0;
+  background: rgb(0 128 0) !important;
+  min-width: 31px !important;
+  min-height: auto !important;
+  opacity: 1;
+  cursor: pointer;
+}
+.react-multiple-carousel__arrow--right {
+  right: calc(0% + 1px) !important;
+}
+.react-multiple-carousel__arrow--left {
+  left: calc(0% + 1px) !important;
+}

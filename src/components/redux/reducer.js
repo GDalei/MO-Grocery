@@ -5,7 +5,7 @@ const initState = {
     address: "",
 
 }
-const loginState = {
+const loginPopUpShowHideState = {
     typeName: "login",
 }
 const userInfoState = {
@@ -13,7 +13,11 @@ const userInfoState = {
     pin: "",
     addressList: [],
     currentAddress: "",
-    role: "",
+    isLogin: false,
+}
+
+const globalProductList = {
+    allProduct: []
 }
 const addCartReducer = (state = initState, action) => {
     switch (action.type) {
@@ -40,7 +44,7 @@ const addCartReducer = (state = initState, action) => {
             return state;
     }
 }
-const loginDetails = (state = loginState, action) => {
+const loginPopUpShowHide = (state = loginPopUpShowHideState, action) => {
     switch (action.type) {
         case "USER_LOGIN":
 
@@ -64,7 +68,6 @@ const userInfo = (state = userInfoState, action) => {
         case "CURRENT_ADDRESS":
             return {
                 ...state,
-                //currentAddress: action.payload,
                 addressList: [...state.addressList, action.payload]
             }
             break;
@@ -73,6 +76,42 @@ const userInfo = (state = userInfoState, action) => {
                 ...state,
                 currentAddress: action.payload,
             }
+            break;
+        case "USER_NAME":
+            return {
+                ...state,
+                name: action.payload,
+            }
+            break;
+        case "LOGGED_IN":
+            return {
+                ...state,
+                name: "sample",
+                pin: "3624",
+                addressList: [],
+                currentAddress: "",
+                isLogin: true,
+            }
+            break;
+        case "LOGGED_OUT":
+            return {
+                ...state,
+                name: "",
+                pin: "",
+                addressList: [],
+                currentAddress: "",
+                isLogin: false,
+            }
+        default:
+            return state;
+    }
+}
+const getGlobalProduct = (state = globalProductList, action) => {
+    switch (action.type) {
+        case "FEATCH_ALL_PRODUCT":
+            return {
+                allProduct: [action.payload]
+            }
         default:
             return state;
     }
@@ -80,7 +119,8 @@ const userInfo = (state = userInfoState, action) => {
 
 const rootReducer = combineReducers({
     addCartReducer,
-    loginDetails,
-    userInfo
+    loginPopUpShowHide,
+    userInfo,
+    getGlobalProduct
 })
 export default rootReducer

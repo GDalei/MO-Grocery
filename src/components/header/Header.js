@@ -15,7 +15,13 @@ import Login from '../login/Login';
 import Container from '@mui/material/Container';
 import CameraEnhanceOutlinedIcon from '@mui/icons-material/CameraEnhanceOutlined';
 import DialogDefault from "../DialogDefault/DialogDefault";
+import { useSelector, useDispatch } from 'react-redux';
+import UserInfo from '../login/UserProfile/UserInfo';
 function NavList() {
+  const isLogin = useSelector((state) => {
+    return state.userInfo.isLogin
+  })
+
   return (
     <ul className="items-center my-2 flex gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 md:items-center sm:items-center">
       <IconButton
@@ -34,7 +40,7 @@ function NavList() {
         color="blue-gray"
         className={`p-1 font-medium ${style.cartCheckOutLogin}`}
       >
-        <Login />
+        {isLogin ? <UserInfo /> : <Login />}
       </Typography>
 
       <Typography

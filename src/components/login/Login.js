@@ -26,8 +26,7 @@ const Login = () => {
     setOpen(false)
   }
   const state = useSelector((state) => {
-    console.log("statestatestate", state)
-    return state.loginDetails
+    return state.loginPopUpShowHide
   })
   return (
     <>

@@ -29,16 +29,19 @@ const SignUp = () => {
         setPassword(event.target.value)
     }
     const loginButtonHandler = () => {
-        if(number == ""){
+        if (number == "") {
             setNumberError(true)
-        }else{
+            return
+        } else {
             setNumberError(false)
         }
-        if(password == ""){
+        if (password == "") {
             setPasswordError(true)
-        }else{
+            return
+        } else {
             setPasswordError(false)
         }
+        dispatch({ type: "LOGGED_IN" })
     }
     return (
         <Card className="mx-auto  ">

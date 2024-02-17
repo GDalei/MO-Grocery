@@ -26,7 +26,7 @@ const Containers = () => {
         <>
             <Container className={style.containerWapper2}>Soft Drink</Container>
             <Container>
-                <Carousel responsive={responsive} swipeable={true} ssr={true} 
+                <Carousel responsive={responsive} swipeable={true} ssr={true} removeArrowOnDeviceType={["tablet", "mobile"]}
                 >
                     <SimpleCard name="English Oven Brown Bread" quantity="400 gr" marketPrice="60" ourPrice="50"
                         url="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/full_screen/pro_18396.jpg?ts=1697722165" />
@@ -46,7 +46,7 @@ const Containers = () => {
                     <SimpleCard />
                     <SimpleCard />
 
-                </Carousel>;
+                </Carousel>
             </Container>
             <Container className={style.containerWapper2}>Soft Drink</Container>
             <Container>

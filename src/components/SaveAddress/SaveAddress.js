@@ -38,7 +38,7 @@ const SaveAddress = ({ closePopup }) => {
         const fullAddress = `${addressOne},${addresstwo},${addressThree},${addressFour},${addressFive},${addressNumber},`
 
         dispatch({ type: "CURRENT_ADDRESS", payload: fullAddress })
-     
+
         if (closePopup != undefined) {
             closePopup()
         }

@@ -5,6 +5,8 @@ const url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,me
 const CarouselCustomNavigation = () => {
     return (
         <Carousel
+            autoplay={true}
+            loop={true}
             className="rounded-xl"
             navigation={({ setActiveIndex, activeIndex, length }) => (
                 <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">

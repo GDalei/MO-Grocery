@@ -19,7 +19,7 @@ const Containers = () => {
         dots: false,
         speed: 1000,
         slidesToShow: 5,
-        slidesToScroll: 3,
+        slidesToScroll: 2,
         infinite: true,
         autoplay: false,
         onReInit: () => setCurrentSlide(slider1?.innerSlider.state.currentSlide),

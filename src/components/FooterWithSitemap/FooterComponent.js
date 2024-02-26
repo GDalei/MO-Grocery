@@ -1,6 +1,6 @@
 const stats = [
     { id: 1, name: ["Ganesh", "sdsdsd"], value: 'Home' },
-    { id: 2, name: ["Atta , rice", "Dal varaity pulses", "Spices", "Beverages", "Cosmetics", "Icecream", "Biscuit and mixture"], value: 'Category ' },
+    { id: 2, name: ["Atta , rice", "Dal varaity pulses", "Milk products", "Suji, sugar","Mobile assesories", "Puja products", "Spices", "Beverages", "Cosmetics", "Icecream", "Biscuit and mixture"], value: 'Category ' },
     { id: 3, name: ["sdsds", "sdsdsd"], value: 'My Basket' },
 
 ]

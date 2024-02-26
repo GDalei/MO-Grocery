@@ -12,3 +12,8 @@
 .footerRight{
     justify-content: space-around;
 }
+.footrContain{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}

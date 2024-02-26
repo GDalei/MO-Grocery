@@ -1,5 +1,9 @@
 .cardWapper {
     width: 180px !important;
+    box-shadow: none !important;
+    border: solid;
+    border-width: thin;
+    border-color: #f7f7f7;
 }
 
 .productTitle {
@@ -22,8 +26,7 @@
 }
 
 .cardBody {
-    padding-bottom: 12px;
-    padding-left: 15px;
+    padding-bottom: 1px;
     padding-left: 15px;
     font-family: system-ui;
 }
@@ -57,7 +60,10 @@
     display: flex;
     justify-content: center;
 }
-
+.cardImgInner{
+    width: 100px;
+    height: 100px;
+}
 
 .CardfooterWapper {
     display: flex;

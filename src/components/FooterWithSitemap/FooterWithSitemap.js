@@ -8,7 +8,7 @@ const SITEMAP = [
   },
   {
     title: "Category",
-    links: ["Discord", "Twitter", "GitHub", "Contact Us"],
+    links: ["Select your Catagory", "Atta , rice", "Dal varaity pulses", "Spices", "Beverages", "Cosmetics", "Icecream", "Biscuit and mixture"],
   },
   {
     title: "My Basket",

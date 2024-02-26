@@ -24,8 +24,10 @@ const SimpleCard = ({ url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=sc
   return (
     <Card className={`mt-3 w-48 ${style.cardWapper}`}>
       <CardBody className={style.cardBody}>
-        <div width="120" height="120" className={style.cardImg} onClick={imgClickHandler}>
+        <div width="100" height="100" className={style.cardImg} onClick={imgClickHandler}>
+          <div className={style.cardImgInner}>
           <img src={url} />
+          </div>
         </div>
         <div className={style.deliveryTime}>10 mins</div>
         <div className={style.productTitle}>
@@ -37,7 +39,7 @@ const SimpleCard = ({ url = "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=sc
         <div className={style.CardfooterWapper}>
           <div>
             <div style={{ color: "black", fontWeight: 600, fontSize: 12 }}>₹{marketPrice}</div>
-            <div style={{ color: "gray", fontWeight: 600, fontSize: 12 }}>₹{ourPrice}</div>
+           
           </div>
           <AddButton price={134} />
 

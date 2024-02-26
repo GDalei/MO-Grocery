@@ -4,7 +4,7 @@ import Container from '@mui/material/Container';
 const CirlceImage = () => {
     return (
         <Container>
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-center gap-y-9">
                 <div className="w-6/12 sm:w-2/12 px-10">
                     <img src="https://media.istockphoto.com/id/183882296/photo/primary-agricultural-products-isolated-on-white.jpg?s=1024x1024&w=is&k=20&c=-UeChyS4A0GzyU-_7jKP_WrOreFzX8Il1FR-FjVFou8=" alt="..." className="shadow rounded-full max-w-full h-auto align-middle border-none" />
                 </div>

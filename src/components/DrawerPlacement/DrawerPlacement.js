@@ -12,7 +12,7 @@ import RadioWithDescription from '../RadioWithDescription/RadioWithDescription';
 import DialogDefault from '../DialogDefault/DialogDefault';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useSelector, useDispatch } from 'react-redux';
-import CircularProgress from '@mui/material/CircularProgress';
+import Spiner from '../Spiner/Spiner';
 const DrawerPlacement = () => {
 
     const [openRight, setOpenRight] = React.useState(false);
@@ -21,7 +21,6 @@ const DrawerPlacement = () => {
     const [isAddress, setisAddress] = useState(false)
 
     const state = useSelector((state) => {
-        console.log(">>>>>>", state)
         return state.addCartReducer;
     })
 
@@ -36,7 +35,7 @@ const DrawerPlacement = () => {
         })
     };
     const checkOutOrderButtonClickHandler = () => {
-
+        alert()
     }
     const backDrawerRight = () => {
         setisAddress((prev) => {
@@ -57,6 +56,7 @@ const DrawerPlacement = () => {
                 className={`p-4 ${style.waper} overscroll-auto`}
                 size="500px"
             >
+
                 {
                     isAddress ? <>
                         <div className="mb-6 flex items-center">
@@ -105,8 +105,9 @@ const DrawerPlacement = () => {
                             </IconButton>
                         </div>
                         <div className={style.widgets__Container}>
-      
-                            <div className={style.widgets_Card_Container}>
+                            <Spiner />
+                            <div className={`blur-sm ${style.widgets_Card_Container}`}>
+
                                 <div className={style.bill_details_warper}>Bill details</div>
                                 <div></div>
                                 <div>Total Item</div>

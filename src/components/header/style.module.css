@@ -33,7 +33,7 @@
 
     .cartCheckOutBacket {
         position: fixed;
-        bottom: 0px;
+        bottom: 7px;
         z-index: 1;
         width: 100%;
         left: 0px;

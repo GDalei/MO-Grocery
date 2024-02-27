@@ -2,8 +2,6 @@ import React from 'react';
 import Container from '@mui/material/Container';
 import style from './style.module.css';
 import SimpleCard from '../card/SimpleCard';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

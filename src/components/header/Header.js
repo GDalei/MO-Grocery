@@ -17,6 +17,7 @@ import CameraEnhanceOutlinedIcon from '@mui/icons-material/CameraEnhanceOutlined
 import DialogDefault from "../DialogDefault/DialogDefault";
 import { useSelector, useDispatch } from 'react-redux';
 import UserInfo from '../login/UserProfile/UserInfo';
+import {constant} from '../../constant';
 function NavList() {
   const isLogin = useSelector((state) => {
     return state.userInfo.isLogin
@@ -79,7 +80,7 @@ const Header = () => {
           variant="h6"
           className="mr-4 cursor-pointer py-1.5"
         >
-          MO Grocery
+        {constant.siteName}
         </Typography>
       </Link>
       <div className="sm:block md:block lg:block">

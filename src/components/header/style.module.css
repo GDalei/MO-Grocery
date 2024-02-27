@@ -1,4 +1,4 @@
-.header_warper{
+.header_warper {
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -12,6 +12,7 @@
     padding-top: 5px;
     flex-wrap: wrap;
 }
+
 /* @media only screen and (max-width: 600px) {
    .cartCheckOutLogin{
     display: none;
@@ -22,14 +23,20 @@
 } */
 
 @media screen and (max-width: 480px) {
-    .cartCheckOutLogin{
-     display: block;
+    .cartCheckOutLogin {
+        display: block;
     }
-    .cartCheckOutCamera{
-     display: none;
-    }
-    .cartCheckOutBacket{
-        
-    }
- }
 
+    .cartCheckOutCamera {
+        display: none;
+    }
+
+    .cartCheckOutBacket {
+        position: fixed;
+        bottom: 0px;
+        z-index: 1;
+        width: 100%;
+        left: 0px;
+        background-color: green;
+    }
+}

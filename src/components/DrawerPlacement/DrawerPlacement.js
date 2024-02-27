@@ -47,7 +47,7 @@ const DrawerPlacement = () => {
     return (
         <React.Fragment>
             <div className="flex flex-wrap gap-4">
-                <div onClick={openDrawerRight}><AddButton></AddButton></div>
+                <div onClick={openDrawerRight} className={style.cartButtonWaper}><AddButton></AddButton></div>
             </div>
 
             <Drawer

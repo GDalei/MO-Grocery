@@ -10,9 +10,9 @@ const Cart = ({ price = 0 }) => {
         return state.addCartReducer;
     })
     return (
-        <>
+        <div className={style.cartButtonWaperInner}>
             <Button className={style.cartButtonWaper}>
-                <div>
+                <div >
                     <AddShoppingCartIcon style={{ color: 'white' }} fontSize="medium" />
                 </div>
                 <div className={style.cartPrice}>
@@ -20,7 +20,7 @@ const Cart = ({ price = 0 }) => {
                     ₹ {state.price}
                 </div>
             </Button>
-        </>
-    )
+            </div>
+            )
 }
-export default Cart
+            export default Cart

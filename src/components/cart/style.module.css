@@ -4,6 +4,7 @@
     background-color: green;
     align-items: center;
     font-weight: bold;
+    width: 100%;
 }
 
 .cartPrice {
@@ -16,7 +17,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    .cartButtonWaper {
-        background: transparent;
+    .cartButtonWaperInner {
+        width: 100%;
     }
 }

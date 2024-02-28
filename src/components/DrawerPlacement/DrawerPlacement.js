@@ -141,14 +141,14 @@ const DrawerPlacement = () => {
                             {
 
                                 String(selectedAddress).length <= "0" ?
-                                    <div className={style.button_process} onClick={checkOutButtonClickHandler}>
+                                    <Button disabled={state.item > 0 ? false : true} className={style.button_process} onClick={checkOutButtonClickHandler}>
                                         <div className={style.CheckoutStrip__PriceContainer}>
                                             <div className={style.CheckoutStrip__NetPriceText}>₹{state.price}</div>
                                             <div className={style.CheckoutStrip__TotalText}>TOTAL</div>
                                         </div>
 
                                         <div className={style.CheckoutStrip__CTAText}>Proceed</div>
-                                    </div> : <div className={style.button_process} onClick={checkOutOrderButtonClickHandler}>
+                                    </Button> : <div className={style.button_process} onClick={checkOutOrderButtonClickHandler}>
                                         <div className={style.CheckoutStrip__PriceContainer}>
                                             <div className={style.CheckoutStrip__NetPriceText}>₹{state.price}</div>
                                             <div className={style.CheckoutStrip__TotalText}>TOTAL</div>

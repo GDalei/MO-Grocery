@@ -22,7 +22,7 @@ const OrderConformed = (props) => {
                 </div>
                 <div class="ms-4 me-5">
                     <h3 class="text-gray-800 font-medium text-sm dark:text-white">
-                        <span class="font-semibold text-green-600 ">Thank you for ordering ! </span>  <br /><blink>Your order is on the way </blink>
+                        <span class="font-semibold text-green-600 ">Thank you for ordering ! </span>  <br />Your order is on the way 
                     </h3>
                     <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                         Please contact our delivery parterner !

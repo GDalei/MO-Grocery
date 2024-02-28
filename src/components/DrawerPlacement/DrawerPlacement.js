@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Drawer,
     Button,
@@ -13,17 +13,25 @@ import DialogDefault from '../DialogDefault/DialogDefault';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useSelector, useDispatch } from 'react-redux';
 import Spiner from '../Spiner/Spiner';
+import { postData } from '../../services/Services';
+import ToshComponent from "../ToshComponent/ToshComponent";
+import { Blinker } from "next/font/google";
+import OrderConformed from '../OrderConformed/OrderConformed';
 const DrawerPlacement = () => {
-
+    const dispatch = useDispatch()
     const [openRight, setOpenRight] = React.useState(false);
     const openDrawerRight = () => setOpenRight(true);
     const closeDrawerRight = () => setOpenRight(false);
-    const [isAddress, setisAddress] = useState(false)
-
+    const [isAddress, setisAddress] = useState(false);
+    const [spiner, setSpiner] = useState(false);
+    const [isShow, setIsShow] = useState(false);
     const state = useSelector((state) => {
         return state.addCartReducer;
     })
 
+    useEffect(() => {
+
+    }, [isShow])
     const selectedAddress = useSelector((state) => {
         console.log("><><>State>>", state.userInfo)
         return state.userInfo.currentAddress;
@@ -35,12 +43,20 @@ const DrawerPlacement = () => {
         })
     };
     const checkOutOrderButtonClickHandler = () => {
-        alert()
+        setIsShow(false)
+        setIsShow(true)
+        postData("https://reqbin.com/echo/post/form", { answer: 42 }).then((data) => {
+            console.log("Hello><><><", data); // JSON data parsed by `data.json()` call
+        });
+
+        dispatch({ type: "ORDER_CONFORMATION_ALERT", payload: true })
+
     }
     const backDrawerRight = () => {
         setisAddress((prev) => {
             return !prev
         })
+
     }
 
     return (
@@ -80,6 +96,7 @@ const DrawerPlacement = () => {
 
                     </> : <>
                         <div className="mb-6 flex items-center justify-between">
+
                             <Typography variant="h5" color="blue-gray">
                                 My Cart
                             </Typography>
@@ -104,10 +121,10 @@ const DrawerPlacement = () => {
                                 </svg>
                             </IconButton>
                         </div>
+                        <ToshComponent isShow={false}></ToshComponent>
                         <div className={style.widgets__Container}>
-                            <Spiner />
-                            <div className={`blur-sm ${style.widgets_Card_Container}`}>
-
+                            <OrderConformed />
+                            <div className={`}  ${style.widgets_Card_Container}`}>
                                 <div className={style.bill_details_warper}>Bill details</div>
                                 <div></div>
                                 <div>Total Item</div>
@@ -124,6 +141,7 @@ const DrawerPlacement = () => {
                             </div>
 
                         </div>
+
 
                         <div className={style.button_warper}>
                             <div className={style.selectAddress}>{selectedAddress}</div>

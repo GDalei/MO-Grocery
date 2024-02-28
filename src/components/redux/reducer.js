@@ -3,6 +3,7 @@ const initState = {
     item: 0,
     price: 0,
     address: "",
+    orderConformation: false,
 
 }
 const loginPopUpShowHideState = {
@@ -39,6 +40,11 @@ const addCartReducer = (state = initState, action) => {
                 ...state,
                 price: state.price -= action.payload,
                 item: state.item -= 1,
+            }
+        case "ORDER_CONFORMATION_ALERT":
+            return {
+                ...state,
+                orderConformation: action.payload
             }
         default:
             return state;

@@ -191,11 +191,11 @@ const Containers = () => {
     ]
     return (
         <>
-        <CirlceImage/>
-        {Product.map((value)=>{
-            return  <Reals catagory={value.catagory} productList={value.productList}/>
-        })}
-            
+            <CirlceImage />
+            {Product.map((value) => {
+                return <Reals catagory={value.catagory} productList={value.productList} />
+            })}
+
         </>
     )
 }

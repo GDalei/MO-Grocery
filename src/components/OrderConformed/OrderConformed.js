@@ -5,8 +5,6 @@ const OrderConformed = (props) => {
         return state.addCartReducer.orderConformation
     })
     const dispatch = useDispatch()
-    const [open, setOpen] = useState(props.isShow)
-    //console.log(">>>>>>>>>>>open.", open)
     const onCloseHandler = ()=>{
         dispatch({type:"ORDER_CONFORMATION_ALERT", payload:false})
     }

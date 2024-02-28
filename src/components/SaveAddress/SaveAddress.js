@@ -33,8 +33,8 @@ const SaveAddress = ({ closePopup }) => {
     const addressNumberChangeHandler = (event) => {
         setAddressNumber(event.target.value)
     }
-    const saveAddressHandler = () => {
-
+    const saveAddressHandler = (event) => {
+        console.log("EventCheck>>>", event)
         const fullAddress = `${addressOne},${addresstwo},${addressThree},${addressFour},${addressFive},${addressNumber},`
 
         dispatch({ type: "CURRENT_ADDRESS", payload: fullAddress })
@@ -43,18 +43,27 @@ const SaveAddress = ({ closePopup }) => {
             closePopup()
         }
     }
+    const formSubMiteHandler = () => {
+
+    }
     return (
         <div>
-            <div className="w-[20rem] flex w-72 flex-col gap-6">
-                <Input color="blue" label="Flat / House no / Building name *" value={addressOne} onChange={addressOneChangeHandler} />
-                <Input color="purple" label="Floor (optional)" value={addresstwo} onChange={addresstwoChangeHandler} />
-                <Input color="indigo" label="Area / Sector / Locality *" value={addressThree} onChange={addressThreeChangeHandler} />
-                <Input color="teal" label="Nearby landmark (optional)" value={addressFour} onChange={addressFourChangeHandler} />
-                <Input color="teal" label="Receiver's name *" value={addressFive} onChange={addressFiveChangeHandler} />
-                <Input color="teal" label="Receiver's phone (optional)" value={addressNumber} onChange={addressNumberChangeHandler} />
-            </div>
-            <div> sd</div>
-            <Button color="green" size="lg" fullWidth onClick={saveAddressHandler}>Save Address</Button>
+            <form action="#" onSubmit={saveAddressHandler}>
+                <div className="w-[20rem] flex w-72 flex-col gap-6">
+                    <Input required color="teal" label="Receiver's name" value={addressFive} onChange={addressFiveChangeHandler} />
+                    <Input type='number' pattern="/^+91(7\d|8\d|9\d)\d{9}$/" required color="teal" label="Receiver's phone (optional)" value={addressNumber} onChange={addressNumberChangeHandler} />
+                    <Input type='text' required color="blue" label="Flat / House no / Building name" value={addressOne} onChange={addressOneChangeHandler} />
+                    <Input required color="purple" label="Floor (optional)" value={addresstwo} onChange={addresstwoChangeHandler} />
+                    <Input required color="indigo" label="Area / Sector / Locality " value={addressThree} onChange={addressThreeChangeHandler} />
+                    <Input required color="teal" label="Nearby landmark (optional)" value={addressFour} onChange={addressFourChangeHandler} />
+
+
+                </div>
+                <div> sd</div>
+                <Button type="submit" color="green" size="lg" fullWidth >Save Address</Button>
+            </form>
+
+
         </div>
     );
 }

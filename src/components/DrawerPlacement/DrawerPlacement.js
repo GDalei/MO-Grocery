@@ -23,15 +23,10 @@ const DrawerPlacement = () => {
     const openDrawerRight = () => setOpenRight(true);
     const closeDrawerRight = () => setOpenRight(false);
     const [isAddress, setisAddress] = useState(false);
-    const [spiner, setSpiner] = useState(false);
-    const [isShow, setIsShow] = useState(false);
     const state = useSelector((state) => {
         return state.addCartReducer;
     })
 
-    useEffect(() => {
-
-    }, [isShow])
     const selectedAddress = useSelector((state) => {
         console.log("><><>State>>", state.userInfo)
         return state.userInfo.currentAddress;
@@ -43,8 +38,6 @@ const DrawerPlacement = () => {
         })
     };
     const checkOutOrderButtonClickHandler = () => {
-        setIsShow(false)
-        setIsShow(true)
         postData("https://reqbin.com/echo/post/form", { answer: 42 }).then((data) => {
             console.log("Hello><><><", data); // JSON data parsed by `data.json()` call
         });

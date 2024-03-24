@@ -18,6 +18,7 @@ import DialogDefault from "../DialogDefault/DialogDefault";
 import { useSelector, useDispatch } from 'react-redux';
 import UserInfo from '../login/UserProfile/UserInfo';
 import {constant} from '../../constant';
+import SearchComponent from "../SearchComponent/SearchComponent";
 function NavList() {
   const isLogin = useSelector((state) => {
     return state.userInfo.isLogin
@@ -83,6 +84,7 @@ const Header = () => {
         {constant.siteName}
         </Typography>
       </Link>
+      <><SearchComponent/></>
       <div className="sm:block md:block lg:block">
         <NavList />
       </div>

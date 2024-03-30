@@ -8,6 +8,8 @@ import CheckoutForm from '../components/CheckoutForm/CheckoutForm';
 import FooterComponent from '../components/FooterWithSitemap/FooterComponent';
 import { init } from '../services/Services';
 import { useEffect } from "react";
+import DefaultLayout from '@/components/Layouts/DefaultLayout';
+import Catagory from "@/components/Catagory/Catagory";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -20,13 +22,18 @@ export default function Home() {
     const movies = await response.json();
     console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>", movies);
   }
-    return (
-      <div>
-        <Header></Header>
+  return (
+    <div>
+      <DefaultLayout>
         <CarouselCustomNavigation />
+        <Catagory/>
         <Containers />
-        <FooterComponent />
+      </DefaultLayout>
+      {/* <Header></Header>
+      <CarouselCustomNavigation />
+      <Containers />
+      <FooterComponent /> */}
 
-      </div>
-    );
-  }
+    </div>
+  );
+}

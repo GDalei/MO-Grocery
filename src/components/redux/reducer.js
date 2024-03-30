@@ -20,6 +20,21 @@ const userInfoState = {
 const globalProductList = {
     allProduct: []
 }
+const Catagory = {
+    catagoryList: [],
+    CatagoryName: "default",
+}
+const getCatagory = (state = Catagory, action) => {
+    switch (action.type) {
+        case "SET_CATAGORY":
+            return {
+                ...state,
+                CatagoryName: action.payload,
+            }
+        default:
+            return state;
+    }
+}
 const addCartReducer = (state = initState, action) => {
     switch (action.type) {
         case "ADD_CART":
@@ -53,7 +68,6 @@ const addCartReducer = (state = initState, action) => {
 const loginPopUpShowHide = (state = loginPopUpShowHideState, action) => {
     switch (action.type) {
         case "USER_LOGIN":
-
             return {
                 ...state,
                 typeName: "login"
@@ -127,6 +141,7 @@ const rootReducer = combineReducers({
     addCartReducer,
     loginPopUpShowHide,
     userInfo,
-    getGlobalProduct
+    getGlobalProduct,
+    getCatagory
 })
 export default rootReducer

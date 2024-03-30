@@ -1,0 +1,23 @@
+.catagoryWarper {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    
+}
+
+.catagoryInner {
+    /* border: 1px;
+    border: solid;
+    border-width: 1px; */
+    border-color: gray;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.catagoryImg {}
+
+.catagoryText {
+    font-size: 12px;
+}

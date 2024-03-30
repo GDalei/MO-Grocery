@@ -3,12 +3,9 @@ import { Provider } from "react-redux";
 import store, { persist_store } from "../components/redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 export default function App({ Component, pageProps }) {
-  console.log("<><><><>Store", store)
   return <>
     <Provider store={store}>
-
       <Component {...pageProps} />
-
     </Provider>
   </>;
 }
